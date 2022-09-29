@@ -9,6 +9,7 @@ void gameOver(){
   }
   
   fill(0);
+  textSize(65);
   text("Game Over", width/2, height/2);
   
   textSize(20);
@@ -31,5 +32,6 @@ void gameOverClicks(){
     mode=GAME;
     backgroundMusic.play();
     tSize=50;
+    score=0;
   }
 }
