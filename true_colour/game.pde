@@ -1,6 +1,7 @@
 void game(){
   textSize(50);
-  //black-wrong
+  //black-wrongr
+  noStroke();
   fill(0);
   rect(0, 0, width/2, height);
   fill(255); 
@@ -14,7 +15,6 @@ void game(){
   
   fill(0);; 
   text("Score: "+score, width/4*3, 700);
-  
   
   //question
   if(tSize<200){
@@ -35,16 +35,19 @@ void gameClicks(){
     answerCorrect=true;
   }
   
-  if(matched==answerCorrect){
-    success.rewind();
-    success.play();
-    score++;
-    tSize=0;
-  }else if(matched!=answerCorrect){
-    fail.rewind();
-    fail.play();
-    mode=GAMEOVER;
-  }
+  checkAnswer();
   
   colorGenerator();
 } //<>//
+
+void gameKey(){
+  if(keyCode==RIGHT){
+    answerCorrect=true;
+  }else if(keyCode==LEFT){
+    answerCorrect=false;
+  }
+  
+  checkAnswer();
+  
+  colorGenerator();
+}
