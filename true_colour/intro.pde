@@ -26,6 +26,7 @@ void intro() {
   
   //start button
   rectButtonTactile(300, 600, 200, 100);
+  textFont(font);
   textSize(50);
   fill(255);
   rect(300, 600, 200, 100);
