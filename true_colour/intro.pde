@@ -1,8 +1,8 @@
 void intro() {
-  image(gif[f], 0, 0, width, height);
-  f++;
-  if (f==frameNum-1) {
-    f=0;
+  image(introGif[introF], 0, 0, width, height);
+  introF++;
+  if (introF==introFrameNum-1) {
+    introF=0;
   }
   
   //text animation 
@@ -34,7 +34,7 @@ void intro() {
   text("Start", 400, 670);
 }
 
-void introClicks(){ //<>//
+void introClicks(){
   if(mouseX<500 && mouseX>300 && mouseY<700 && mouseY>600){
     mode=GAME;
   }
