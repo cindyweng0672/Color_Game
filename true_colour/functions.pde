@@ -1,8 +1,9 @@
 void colorGenerator() {
   CindexNum=int(random(6));
-  p=random(0, 1);
+  colorP=random(0, 1);
+  patternP=random(0, 1);
 
-  if (p<0.5) {
+  if (colorP<0.5) {
     TindexNum=CindexNum;
   } else {
     do {
@@ -15,9 +16,10 @@ void colorGenerator() {
   } else {
     matched=false;
   }
-
+  
   println("Matched: "+matched);
-  println("CNum: "+CindexNum+"   TNum: "+TindexNum+"   P: "+ p);
+  println("CNum: "+CindexNum+"   TNum: "+TindexNum+"   P: "+ colorP);
+  println("patternP: "+patternP);
 }
 
 void rectButtonTactile(int x, int y, int w, int h) {
@@ -33,7 +35,9 @@ void checkAnswer() {
     success.rewind();
     success.play();
     score++;
-    tSize=0;
+    tSize=50;
+    textY=height/2;
+    vy=-10;
   } else if (matched!=answerCorrect) {
     fail.rewind();
     fail.play();
